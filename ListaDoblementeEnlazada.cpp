@@ -220,8 +220,8 @@ void ListaDoble::eliminarElemento(int datoRef){
     }
     else{
         nodo *saltarin = head;
-        while(saltarin && saltarin->dato != datoRef){
-            saltarin = saltarin->sig;
+        while(saltarin && saltarin->dato != datoRef){  //(saltarin->dato).titulo.compare(datoRef.titulo) != 0 
+            saltarin = saltarin->sig;                  // esto se utiliza para comparar strings
         }
         if(!saltarin){
             cout<<"El dato no está en la lista"<<endl;
@@ -248,7 +248,8 @@ void ListaDoble::eliminarElemento(int datoRef){
             head = NULL;
             delete saltarin;
         }
-    }
+    cout<<"Elemento eliminado correctamente"<<endl;
+  }
 }
 
 void ListaDoble::eliminarNodo(){
